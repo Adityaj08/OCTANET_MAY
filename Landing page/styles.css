@@ -1,0 +1,562 @@
+*,*::after,*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+:root{
+    --favorite-button-color: var(--light-color);
+    --favorite-button-fill-color: rgba(0,0,0,0);
+    --blur-color: rgba(255,255,255,0.01);
+    --blur-color-light: rgba(255,255,255,0.08);
+    --light-color: rgb(255,255,255);
+    --text-color: #f5221b;
+    --background-color: #000000;
+}
+
+.hidden{
+    opacity: 0;
+    transition: 1s ease-out;
+}
+
+.hidden.show{
+    opacity: 1;
+}
+
+@font-face {
+    font-family: Moglan;
+    src: url(./assets/font/Moglan_DEMO.ttf);
+}
+
+/*Mock up Animation*/
+
+@keyframes float {
+    0%{
+        transform: translateY(-25px);
+    }
+    50%{
+        transform: translateY(25px);
+    }
+    100%{
+        transform: translateY(-25px);
+    }
+}
+
+/* PreLoader Animation*/
+@keyframes scale {
+    0%{
+        scale: 1;
+    }
+    50%{
+        scale: 2;
+    }
+    100%{
+        scale: 1;
+    }
+}
+.preloader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--background-color);
+    overflow: hidden;
+}
+
+.preloader img{
+    height: 100px;
+    animation: scale 5s ease-in-out infinite;
+}
+
+
+
+body{
+    background-color: var(--background-color);
+    -webkit-tap-highlight-color: transparent;
+}   
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.08);
+    backdrop-filter: blur(12px);
+    height: 70px;
+    width: 100vw;
+    z-index: 5;
+}
+
+
+.header .logo {
+    max-width: 60px;
+    object-fit: contain;
+}
+
+.header .logo:hover{
+    filter: drop-shadow(0px 0px 12px rgb(250, 250, 250));
+}
+
+
+.main,.about{
+    height: 100vh;
+    width: 100vw;
+    max-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+.main h1,.about h1{
+    text-align: center;
+    width: 100vh;
+    z-index: 1;
+    position: absolute;
+    top: 18%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 6rem;
+    font-family: "Moglan",sans-serif;
+    font-weight: 100;
+    color: var(--text-color);
+    padding-bottom: 5px;
+    letter-spacing: 1.9px;
+}
+.main h1.show{
+    top: 16%;
+}
+.main .mock-up-container{
+    z-index: -1;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+.main .mock-up-container .mock2{
+    height: 650px;
+    animation: float 10s ease-in-out infinite;
+}
+.main .mock-up-container .mock1 , .mock3{
+    height: 350px;
+    animation: float 8s ease-in-out infinite;
+}
+.main .mock-up-container .mock3{
+    animation: float 6s ease-in-out infinite;
+}
+.fade{
+    z-index: 1;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,1),rgba(0,0,0,0));
+    backdrop-filter: blur(10px);
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1), transparent);
+}
+
+/*Section About */
+
+.about h1.show{
+    text-align: center;
+    width: 100vw;
+    top: 16%;
+}
+.about .line{
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 2px;
+    width: 80vw;
+    max-width: 80vw;
+    background-color: var(--text-color);
+}
+
+.about .show-case-image{
+    position: absolute;
+    top: 62%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 350px;
+    width: 80vw;
+    overflow: hidden;
+}
+.about .show-case-image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: 50% 0%;
+    opacity: 0;
+    scale: 1.5;
+}
+.about .show-case-image .show{
+    opacity: 1;
+    scale: 1;
+    transition: 1.5s ease;
+}
+
+
+/*Section Download*/
+
+.download{
+    min-width: 100vw;
+    position: relative;
+    overflow: hidden;
+}
+.download .free-downloads{
+    position: relative;
+    margin: 70px auto 20px auto;
+    height: 400px;
+    width: 90vw;
+    background-color: var(--blur-color);
+    backdrop-filter: blur(12px);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+}
+.download .free-downloads p{
+    text-align: center;
+    font-size: 2rem;
+    font-family: "Moglan" , sans-serif;
+    color: var(--light-color);
+    padding: 20px 0 15px 0;
+}
+
+.download .free-downloads p span{
+    color: var(--text-color);
+}
+
+.download .free-downloads .card-container{
+    height: 300px;
+    max-width: 90vw;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.download .free-downloads .card-container::-webkit-scrollbar{
+    display: none;
+}
+
+.download .free-downloads .slider-nav{
+    z-index: 888;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    height: 50px;   
+    width: 50px;
+    border-radius: 50%;
+    background-color: var(--blur-color);
+    backdrop-filter: blur(12px);
+    cursor: pointer;
+}
+
+.download .free-downloads .slider-nav i{
+    font-size: 18px;
+    color: var(--light-color);
+}
+
+.download .free-downloads .slider-nav.next-card{
+    display: none;
+    left: 15px;
+}
+
+.download .free-downloads .slider-nav.prev-card{
+    right: 15px;
+}
+
+.download .free-downloads .card-container .card{
+    height: 300px;
+    width: 280px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: scale 800ms ease;
+}
+
+.download .free-downloads .card-container .card-wrapper:hover > div .card{
+    scale: 1.05;
+}
+
+
+.download .free-downloads .card-container .card-wrapper div{
+    height: 300px;
+    width: 280px;
+    z-index: 0;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.download .free-downloads .card-container .card-wrapper{
+    position: relative;
+    margin: 30px;
+}
+
+.download .free-downloads .card-container .card-wrapper .info{
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    position: absolute;
+}
+
+.download .free-downloads .card-container .card-wrapper .info .download-button{
+    cursor: pointer;
+    position: absolute;
+    bottom: 15%;
+    right: 20%;
+    font-size: 30px;
+    color: var(--light-color);
+}
+
+.download .free-downloads .card-container .card-wrapper .info .favorite-button{
+    cursor: pointer;
+    position: absolute;
+    bottom: 15%;
+    left: 20%;
+    font-size: 30px;
+    color: var(--favorite-button-color);
+}
+
+.download .playstore{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    
+}
+
+.download .playstore .buy{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+.download .playstore h1{
+    font-family: "Moglan" , sans-serif;
+    color: var(--light-color);
+    font-weight: 100;
+    font-size: 3rem;
+}
+
+.download .playstore h1 span{
+    color: var(--text-color);
+}
+.download .playstore .playstore-mockup{
+    margin: 0 40px;
+    height: 200px;
+}
+
+.download .playstore .playstore-icon{
+    max-height: 120px;
+    object-fit: cover;
+}
+/*Contact Form*/
+
+.contact-form{
+    max-height: 100vh;
+    min-width: 100vw;
+    position: relative;
+}
+.contact-form .contact-text{
+    margin: 10px 30px;
+    font-size: 50px;
+    font-family: "Moglan";
+    font-weight: 100;
+    color: var(--light-color);
+}
+.contact-form .contact-text span{
+    margin: 5px 25px;
+    color: var(--text-color);
+}
+.contact-form .input-grp{
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.contact-form label{
+    font-size: 20px;
+    font-family: "Moglan";
+    font-weight: 100;
+    color: var(--light-color);
+}
+
+.contact-form input, .contact-form textarea{
+    font-size: 20px;
+    font-weight: 500;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid var(--light-color);
+    display: block;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    height: 60px;
+    background-color: var(--blur-color);
+    color: var(--light-color);
+    padding: 10px 15px;
+    margin: 10px 15px;
+}
+
+.contact-form textarea{
+    height: 120px;
+}
+
+.contact-form .submit-button{
+    font-size: 20px;
+    font-weight: 500;
+    border: none;
+    border-radius: 8px;
+    height: 60px;
+    width: 120px;
+    background-color: var(--blur-color);
+    color: var(--light-color);
+    margin: 10px 40px;
+}
+
+/*footer*/
+.footer{
+    position: relative;
+    height: 200px;
+    width: 100vw;
+    background-color: var(--blur-color);
+}
+
+.footer .twitter{
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%,-50%);
+    height: 45px;
+    max-width: 350px;
+    width: 38vmax;
+    border-radius: 3px;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer .twitter p{
+    padding: 0 10px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.footer .twitter span{
+    font-weight: 200;
+    padding: 0 0 0 5px;
+}
+
+
+.footer .twitter i{
+    cursor: pointer;
+    padding: 0 10px;
+}
+.footer .twitter i:hover{
+    scale: 1.2;
+    color: #7581c1;
+}
+
+.footer .footer-text{
+    padding-top: 30px;
+    text-align: center;
+    font-size: 3rem;
+    color: var(--light-color);
+    font-family: "Moglan";
+}
+
+.footer .footer-text span{
+    color: var(--text-color);
+    padding: 0 15px;
+}
+
+@media (max-width: 1560px){
+    .main h1, .about h1, .contact-form h1 .footer .footer-text{
+        font-size: 5rem;
+    }
+    .download .playstore{
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+} 
+@media (max-width: 780px){
+    .main h1, .about h1, .contact-form h1 .footer .footer-text{
+        font-size: 3rem;
+    }
+    .download .playstore{
+        flex-direction: column-reverse;
+        gap: 20px;
+    }
+    .download .playstore .buy{
+        gap: 80px;
+    }
+} 
+@media (max-width: 450px){
+
+    .main .mock-up-container{
+        gap: 15px;
+    }
+    .main .mock-up-container .mock2{
+        height: 450px;
+    }
+
+    .main .mock-up-container .mock1, .mock3{
+        height: 250px;
+    }
+
+    .main h1, .about h1,.footer .footer-text{
+        font-size: 2.5rem;
+    }
+    .download .playstore h1{
+        width: 50vw;
+        font-size: 2rem;
+    }
+    .download .playstore .buy{
+        display: flex;
+        align-items: center;
+        margin: 0 5px;
+        gap: 5px;
+    }
+    .download .free-downloads p{
+        font-size: 18px;
+    }
+
+    .download .free-downloads .card-container .card-wrapper .info .download-button,.download .free-downloads .card-container .card-wrapper .info .favorite-button{
+        font-size: 20px;
+    }
+    
+    .download .playstore .playstore-icon{
+        height: 80px;
+        width: 100px;
+    }
+    .contact-form .contact-text{
+        font-size: 1.6rem;
+    }
+    .contact-form .contact-text span{
+        margin-left: 10px;
+    }
+
+    .footer .footer-text{
+        font-size: 1.5rem;
+    }
+} 

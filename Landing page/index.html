@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Starry Gogh | Art Re-imagined</title>
+    <link rel="icon" type="image/png" href="./assets/imgs/logo.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"">
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="preloader">
+      <img src="./assets/imgs/logo.png" alt="">
+    </div>
+    <header class="header">
+      <a href="#home"
+        ><img src="./assets/imgs/logo.png" alt="LOGO" class="logo"
+      /></a>
+    </header>
+    <main class="main">
+      <div class="fade"></div>
+      <h1 class="hidden">Starry Gogh</h1>
+      <div class="mock-up-container">
+        <img src="./assets/imgs/mock1.png" alt="" class="mock1" />
+        <img src="./assets/imgs/mock2.png" alt="" class="mock2" />
+        <img src="./assets/imgs/mock3.png" alt="" class="mock3" />
+      </div>
+    </main>
+    <section class="about" id="about">
+      <h1 class="hidden">Vincent van Gogh</h1>
+      <div class="line"></div>
+      <div class="show-case-image">
+        <img src="./assets/imgs/mainMockUp.png" alt="" class="hidden" />
+      </div>
+    </section>
+    <section class="download">
+      <div class="free-downloads">
+        <p class="hidden">Some free <span>ArtWorks</span> to Download</p>
+        <div class="card-container">
+          <div id="next-card" class="slider-nav next-card">
+            <i class="fa-solid fa-arrow-left"></i>
+          </div>
+          <div id="prev-card" class="slider-nav prev-card">
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
+          <div class="card-wrapper">
+            <div class="info">
+              <i class="fa-regular fa-heart favorite-button"></i>
+              <a href="./assets/imgs/mockUp1.jpg" download="sunflower" target="_blank"><i class="fa-solid fa-download download-button"></i></a>
+            </div>
+            <div>
+              <img class="card" src="./assets/imgs/mockUp1.jpg" alt="" />
+            </div>
+          </div>
+          <div class="card-wrapper">
+            <div class="info">
+              <i class="fa-regular fa-heart favorite-button"></i>
+              <a href="./assets/imgs/mockUp2.jpg" downlaod="sunflower2" target="_blank"><i class="fa-solid fa-download download-button"></i></a>
+            </div>
+            <div>
+              <img class="card" src="./assets/imgs/mockUp2.jpg" alt="" />
+            </div>
+          </div>
+          <div class="card-wrapper">
+            <div class="info">
+              <i class="fa-regular fa-heart favorite-button"></i>
+              <a href="./assets/imgs/mockUp3.jpg" downlaod="sunflower3" target="_blank"><i class="fa-solid fa-download download-button"></i></a>
+            </div>
+            <div>
+              <img class="card" src="./assets/imgs/mockUp3.jpg" alt="" />
+            </div>
+          </div>
+          <div class="card-wrapper">
+            <div class="info">
+              <i class="fa-regular fa-heart favorite-button"></i>
+              <a href="./assets/imgs/mockUp4.jpg" downlaod="sunflower4" target="_blank"><i class="fa-solid fa-download download-button"></i></a>
+            </div>
+            <div>
+              <img class="card" src="./assets/imgs/mockUp4.jpg" alt="" />
+            </div>
+          </div>
+          <div class="card-wrapper">
+            <div class="info">
+              <i class="fa-regular fa-heart favorite-button"></i>
+              <a href="./assets/imgs/mockUp5.jpg" downlaod="seawaves" target="_blank"><i class="fa-solid fa-download download-button"></i></a>
+            </div>
+            <div>
+              <img class="card" src="./assets/imgs/mockUp5.jpg" alt="" />
+            </div>
+          </div>
+          <div class="card-wrapper">
+            <div class="info">
+              <i class="fa-regular fa-heart favorite-button"></i>
+              <a href="./assets/imgs/mockUp6.jpg" downlaod="seawaves2" target="_blank"><i class="fa-solid fa-download download-button"></i></a>
+            </div>
+            <div>
+              <img class="card" src="./assets/imgs/mockUp6.jpg" alt="" />
+            </div>
+          </div>
+          <div class="card-wrapper">
+            <div class="info">
+              <i class="fa-regular fa-heart favorite-button"></i>
+              <a href="./assets/imgs/mockUp7.jpg" downlaod="seawaves3" target="_blank"><i class="fa-solid fa-download download-button"></i></a>
+            </div>
+            <div>
+              <img class="card" src="./assets/imgs/mockUp7.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="playstore">
+        <img
+          src="./assets/imgs/playstoreMockup.jpg"
+          alt=""
+          class="playstore-mockup"
+        />
+        <div class="buy">
+          <h1 class="hidden">Buy artwork<br /><span>in our app</span></h1>
+          <img
+            src="./assets/imgs/Playstore.png"
+            alt=""
+            class="playstore-icon"
+          />
+        </div>
+      </div>
+    </section>
+    <section class="contact-form">
+      <h1 class="contact-text">Want to buy an artwork?<br><span>tell us about it</span></h1>
+      <form action="submit">
+        <div class="input-grp">
+          <label for="email">Email*</label>
+          <input type="email" required placeholder="starry@gmail.com" id="email">
+        </div>
+        <div class="input-grp">
+          <label for="message">Message*</label>
+          <textarea placeholder="I want to buy *this* artwork" id="message" rows="6" cols="15" class="message"></textarea>
+        </div>
+        <button class="submit-button" type="submit">Submit ></button>
+      </form>
+    </section>
+    <footer class="footer">
+      <p class="footer-text"><span>Starry gogh</span>| Art Re-imagined</p>
+      <div class="twitter">
+        <p>Made With <i class="fa-solid fa-heart" style="color: red;"></i> By Aditya<span>|</span><i class="fa-brands fa-twitter" onclick="window.open('https://twitter.com/aditya_avadhoot','_blank')"></i><i class="fa-brands fa-x-twitter" onclick="window.open('https://twitter.com/aditya_avadhoot','_blank')"></i></p>
+    </div>
+    </footer>
+  </body>
+  <script src="script.js"></script>
+  <script src="https://kit.fontawesome.com/ed2808213c.js" crossorigin="anonymous"></script>
+</html>
