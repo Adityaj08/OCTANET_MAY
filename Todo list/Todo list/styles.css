@@ -1,0 +1,135 @@
+*,*::after,*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+span{
+    cursor: pointer;
+}
+body{
+    background-color: #000;
+}
+
+.container{
+    background-color: #fff;
+    max-width: 400px;
+    margin: 100px auto;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    padding: 10px;
+}
+
+.task-input{
+    height: 45px;
+    margin: 0 10px 20px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.task-input input , .add-btn{
+    height: 90%;
+    width: 70%;
+    padding: 0 5px;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #000;
+}
+
+.task-input input::placeholder{
+    color: #bfbfbf;
+}
+
+.task-input .add-btn{
+    width: 25%;
+    border: none;
+    border-radius: 5px;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+.filters,.list{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #d6d6d6;
+}
+
+.filters span{
+    background-color: #ebeaea;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+}
+.filters span.active{
+    background-color: #000;
+    color: #fff;
+}
+.filters span:first-child{
+    pointer-events: none;
+    background-color: #fff;
+}
+
+.task-list{
+    margin:0 0 20px 0;
+}
+
+.task-list label{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 17px;
+}
+
+.task-list label input{
+    display: none;
+}
+
+.task-list label i{
+    padding: 0 10px;
+    font-size: 22px;
+    opacity: 0;
+}
+
+.task-list label i.checked{
+    opacity: 1;
+}
+
+.task-list label p.checked{
+    text-decoration: line-through;
+}
+
+.task-list .controls{
+    display: flex;
+    gap: 10px;
+}
+
+.btn-div{
+    height: 40px;
+    width: 120px;
+    margin: 0 auto;
+}
+
+.clear-btn{
+    position: absolute;
+    height: 40px;
+    width: 120px;
+    border: none;
+    font-size: 18px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.14);
+    color: #fff;
+    cursor: pointer;
+}
+
+@media (max-width: 450px){
+    .container{
+        max-width: 300px;
+        font-size: 12px;
+    }
+}

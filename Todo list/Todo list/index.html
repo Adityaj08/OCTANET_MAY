@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do list</title>
+    <script defer src="script.js"></script>
+</head>
+<link rel="stylesheet" href="styles.css">
+<body>
+    <div class="container">
+        <div class="task-input">
+            <input type="text" placeholder="Add some Tasks....">
+            <button class="add-btn">Add</button>
+        </div>
+        <div class="filters">
+            <span>Filter by :</span>
+            <span class="active" id="all">All Tasks</span>
+            <span id="pending">Pending</span>
+            <span id="completed">Completed</span>
+        </div>
+        <ul class="task-list">
+        </ul>
+    </div>
+    <div class="btn-div">
+        <button class="clear-btn">Clear All</button>
+    </div>
+    <!--Font awesome script for icons-->
+<script src="https://kit.fontawesome.com/ed2808213c.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
